@@ -1,0 +1,8 @@
+.side-menu-item
+{
+    transition: color 0.3s, background-color 0.3s;
+    &:hover {
+        cursor: pointer;
+        color: #f5f5f5;
+    }
+}

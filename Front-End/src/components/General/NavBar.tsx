@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 
 export default function NavBar () {
   return (
@@ -41,8 +42,8 @@ export default function NavBar () {
               justifyContent: 'center',
               alignItems: 'center',
             }}
-          >
-          </Box>
+          />
+          <WalletMultiButton />
           {/* <Logo /> */}
         </Toolbar>
       </AppBar>

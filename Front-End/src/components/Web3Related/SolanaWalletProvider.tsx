@@ -43,8 +43,6 @@ export const SolanaWalletProvider = ({ children }: { children: React.ReactNode }
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
-          <WalletMultiButton />
-          <WalletDisconnectButton />
           {children}
           {/* Your app's components go here, nested within the context providers. */}
         </WalletModalProvider>
