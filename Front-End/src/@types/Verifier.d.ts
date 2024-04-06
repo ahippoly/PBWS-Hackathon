@@ -2,10 +2,10 @@ export {}
 
 declare global {
 
-    interface University {
+    interface VerificationRequest {
         id: string
         name: string
-        description: string
+        company: string
         imgBase64: string
     }
 }

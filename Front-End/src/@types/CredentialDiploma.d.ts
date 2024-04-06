@@ -8,5 +8,6 @@ declare global {
         description: string
         university: string
         metadata: string
+        students: Student[]
     }
 }
