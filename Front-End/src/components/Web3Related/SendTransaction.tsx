@@ -6,6 +6,7 @@ import type { FC } from 'react'
 import { useCallback, useState } from 'react'
 import { useNotify } from '@/components/General/notify'
 import { LoadingButton } from '@mui/lab'
+import idl from './idl.json'
 
 export const SendTransaction: FC = () => {
   const { connection } = useConnection()
@@ -15,6 +16,10 @@ export const SendTransaction: FC = () => {
 
   const onClick = useCallback(async () => {
     let signature: TransactionSignature | undefined
+
+    const PrivateKye = JSON.parse(import.meta.env.VITE_PRIVATE_KEY)
+    console.log('🚀 ~ onClick ~ private_key:', PrivateKye)
+
     try {
       setLoadingTransact(true)
       if (!publicKey) throw new Error('Wallet not connected!')
@@ -40,6 +45,7 @@ export const SendTransaction: FC = () => {
 
       await connection.confirmTransaction({ blockhash, lastValidBlockHeight, signature })
       notify('success', 'Transaction successful!', signature)
+      //   notify('success', 'Transaction successful!', 'ApTt1TTWLkcW8fGEWAa98SHcEnYPMRXut4WTUuYZhoDTau7Yp1Ck8RAbuehxG6wQHWmLFRksxra64S8NkTQC3AN')
       setLoadingTransact(false)
     } catch (error: any) {
       setLoadingTransact(false)
