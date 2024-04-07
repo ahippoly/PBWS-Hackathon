@@ -2,6 +2,7 @@ import { Alert, AlertTitle, Box, Button, Dialog, DialogActions, DialogContent, D
 import { LoadingButton } from '@mui/lab'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import MoodleLogo from '@/assets/img/Moodle-logo.svg.png'
 
 function ConnectToThirdParty () {
   const [loadingConnectVerification, setLoadingConnectVerification] = useState(false)
@@ -124,6 +125,7 @@ function ConnectToThirdParty () {
           marginTop: 10,
         }}
       >
+        <img src={MoodleLogo} alt='moodle logo' style={{ height: '100px' }} />
         <Typography variant='h4'>Connect to Moodle in one click
           <br /> Generate Credentials
         </Typography>

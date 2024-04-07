@@ -6,6 +6,7 @@ import { universities } from '@/mocks/University.mock'
 import { studentsMocks } from '@/mocks/Students.mock'
 import { SendSOLToRandomAddress } from '@/components/Web3Related/SendToRandomAddress'
 import { SendTransaction } from '@/components/Web3Related/SendTransaction'
+import { studentList } from '@/mocks/Students2.mock'
 
 function CreateCredentials () {
   const [allDiplomas, setAllDiplomas] = useState<CredentialDiploma[]>(diplomas)
@@ -19,7 +20,7 @@ function CreateCredentials () {
   const [selectedCredential, setSelectedCredential] = useState<CredentialDiploma>(allDiplomas[0])
   const [metadata, setMetadata] = useState<string>('')
   const [checkedDiplomas, setCheckedDiplomas] = useState(diplomas.map((diploma) => diploma.id))
-  const [checkedStudents, setCheckedStudents] = useState(studentsMocks.map((student) => student.id))
+  const [checkedStudents, setCheckedStudents] = useState(studentList.map((student) => student.id))
 
   const handleUniversityChange = (event: SelectChangeEvent) => {
     const university = universities.find((university) => university.id === event.target.value)
@@ -85,7 +86,7 @@ function CreateCredentials () {
           <Typography variant='h5'>Diplomas</Typography>
           <List
             dense
-            sx={{ maxWidth: 360, bgcolor: 'background.paper', height: '100%', overflow: 'auto' }}
+            sx={{ maxWidth: 360, bgcolor: 'background.paper', height: 500, overflow: 'auto' }}
             disablePadding
           >
             {allDiplomas.map((diploma) => (

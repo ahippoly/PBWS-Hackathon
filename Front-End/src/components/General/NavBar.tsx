@@ -6,6 +6,7 @@ import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
+import Logo from '@/assets/img/logo.png'
 
 export default function NavBar () {
   return (
@@ -24,15 +25,7 @@ export default function NavBar () {
             alignItems: 'center',
           }}
         >
-          <IconButton
-            size='large'
-            edge='start'
-            color='inherit'
-            aria-label='menu'
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
+          <img src={Logo} alt='logo' style={{ height: '50px' }} />
           <Box
             sx={{
               position: 'absolute',
