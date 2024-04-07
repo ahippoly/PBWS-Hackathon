@@ -20,6 +20,7 @@ import GlobalLayout from './layout/GlobalLayout'
 import MyCredentials from './pages/Provider/MyCredentials'
 import SendCredential from './pages/Provider/SendCredential'
 import ConnectToThirdParty from './pages/Provider/ConnectToThirdParty'
+import { SnackbarProvider } from 'notistack'
 
 gsap.registerPlugin(useGSAP)
 
@@ -28,15 +29,17 @@ export function App () {
     <SolanaWalletProvider>
       <MuiThemeProvider>
         <BrowserRouter>
-          <Stack bgcolor='background.default' direction='column' sx={{ height: '100%', maxHeight: '100%' }}>
-            <Routes>
-              <Route path='/' element={<GlobalLayout><ConnectToThirdParty /></GlobalLayout>} />
-              <Route path='/provider/connect' element={<GlobalLayout><ConnectToThirdParty /></GlobalLayout>} />
-              <Route path='/provider/create' element={<GlobalLayout><CreateCredentials /></GlobalLayout>} />
-              <Route path='/provider/my-credentials' element={<GlobalLayout><MyCredentials /></GlobalLayout>} />
-              <Route path='/provider/send-credential' element={<GlobalLayout><SendCredential /></GlobalLayout>} />
-            </Routes>
-          </Stack>
+          <SnackbarProvider>
+            <Stack bgcolor='background.default' direction='column' sx={{ height: '100%', maxHeight: '100%' }}>
+              <Routes>
+                <Route path='/' element={<GlobalLayout><ConnectToThirdParty /></GlobalLayout>} />
+                <Route path='/provider/connect' element={<GlobalLayout><ConnectToThirdParty /></GlobalLayout>} />
+                <Route path='/provider/create' element={<GlobalLayout><CreateCredentials /></GlobalLayout>} />
+                <Route path='/provider/my-credentials' element={<GlobalLayout><MyCredentials /></GlobalLayout>} />
+                <Route path='/provider/send-credential' element={<GlobalLayout><SendCredential /></GlobalLayout>} />
+              </Routes>
+            </Stack>
+          </SnackbarProvider>
         </BrowserRouter>
       </MuiThemeProvider>
     </SolanaWalletProvider>

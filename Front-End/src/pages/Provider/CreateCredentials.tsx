@@ -153,12 +153,7 @@ function CreateCredentials () {
         </Stack>
 
       </Stack>
-      <LoadingButton
-        variant='contained'
-      >
-        Mint for all
-      </LoadingButton>
-      <SendSOLToRandomAddress />
+
       <SendTransaction />
 
     </Stack>
