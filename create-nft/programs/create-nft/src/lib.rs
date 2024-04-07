@@ -6,9 +6,9 @@ use anchor_spl::{
         CreateMetadataAccountsV3, Metadata,},
     token::{mint_to, Mint, MintTo, Token, TokenAccount} //token account types [Diplomas/Certs]
 };
-use mpl_token_metadata::types::DataV2; //Use non transferrable extension
+use mpl_token_metadata::types::DataV2; 
 
-declare_id!("51NDTJvbJADrRFsiNyhSrFh9UqgXXstnhTiwo2nU7X78");
+declare_id!("8pjTGsaZFp29VDTN9KEJkCgBKin9y3tYLhCr6mFe4tHg");
 
 #[program]
 pub mod create_nft {
@@ -87,7 +87,7 @@ pub mod create_nft {
 
 #[derive(Accounts)]
 pub struct InitNFT<'info> {
-    /// CHECK: pass
+    /// CHECK: we will check this in the instruction
     #[account(mut, signer)]
     pub signer: AccountInfo<'info>,
     #[account( // mint account
@@ -105,9 +105,11 @@ pub struct InitNFT<'info> {
         associated_token::authority = signer,        
     )]
     pub associated_token_account: Account<'info, TokenAccount>, //to facilitate using NFTs
-    /// CHECK: address
+    #[account(mut)]
+    /// CHECK: we will check this in the instruction
     pub metadata_account: AccountInfo<'info>,
-    /// CHECK: address 
+    #[account(mut)]
+    /// CHECK: we will check this in the instruction
     pub master_edition_account: AccountInfo<'info>,
 
     //programs account
@@ -116,7 +118,6 @@ pub struct InitNFT<'info> {
     pub token_metadata_program: Program<'info, Metadata>,
     pub system_program: Program<'info, System>, 
     pub rent: Sysvar<'info, Rent>,
-    //pub metadata_program: Program<'info, Metadata>,
 }
 
 //#[derive(Accounts)]
