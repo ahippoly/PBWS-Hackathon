@@ -3,26 +3,39 @@ import { CssBaseline, createTheme, PaletteMode } from '@mui/material'
 
 export const themeOptions = {
   palette: {
-    mode: 'dark' as PaletteMode,
+    mode: 'light' as PaletteMode,
     background: {
-      default: '#1e1e1e',
-      paper: '#616161',
+      default: '#fafafa',
+      paper: '#fff',
     },
     primary: {
-      main: '#7b62c1',
+      main: '#8c52ff',
     },
     secondary: {
-      main: '#f8f9f9',
+      main: '#8f8f8f',
     },
     text: {
       // primary: '#7b62c1',
     },
   },
   typography: {
-    fontFamily: 'Museo Moderno',
-    fontWeightLight: 500,
-    fontWeightRegular: 500,
-    fontWeightMedium: 500,
+    fontFamily: 'Poppins',
+    // fontWeightLight: 200,
+    // fontWeightRegular: 100,
+    // fontWeightMedium: 200,
+    // h1: {}
+    // body1: {
+    //   fontWeight: 200,
+    // },
+    // body2: {
+    //   fontWeight: 200,
+    // },
+    // subtitle1: {
+    //   fontWeight: 200,
+    // },
+    // subtitle2: {
+    //   fontWeight: 200,
+    // },
   },
 }
 

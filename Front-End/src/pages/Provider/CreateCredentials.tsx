@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { diplomas } from '@/mocks/Diplomas.mock'
 import { universities } from '@/mocks/University.mock'
 import { studentsMocks } from '@/mocks/Students.mock'
+import { SendSOLToRandomAddress } from '@/components/Web3Related/SendToRandomAddress'
+import { SendTransaction } from '@/components/Web3Related/SendTransaction'
 
 function CreateCredentials () {
   const [allDiplomas, setAllDiplomas] = useState<CredentialDiploma[]>(diplomas)
@@ -102,6 +104,7 @@ function CreateCredentials () {
                   onClick={() => handleSelectDiploma(diploma)}
                 >
                   <ListItemText>
+
                     {diploma.name}
                   </ListItemText>
                 </ListItemButton>
@@ -155,6 +158,9 @@ function CreateCredentials () {
       >
         Mint for all
       </LoadingButton>
+      <SendSOLToRandomAddress />
+      <SendTransaction />
+
     </Stack>
   )
 }

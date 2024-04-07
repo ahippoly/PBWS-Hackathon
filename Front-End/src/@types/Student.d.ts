@@ -10,4 +10,13 @@ declare global {
         imgBase64: string
         walletAddress: string
     }
+
+    interface StudentMetadata {
+        firstName: string
+        lastName: string
+        diploma: string
+        university: string
+        dateOfIssue: string
+        specialization: string
+    }
 }

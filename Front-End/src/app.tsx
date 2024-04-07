@@ -30,7 +30,7 @@ export function App () {
         <BrowserRouter>
           <Stack bgcolor='background.default' direction='column' sx={{ height: '100%', maxHeight: '100%' }}>
             <Routes>
-              <Route path='/' element={<HomePage />} />
+              <Route path='/' element={<GlobalLayout><ConnectToThirdParty /></GlobalLayout>} />
               <Route path='/provider/connect' element={<GlobalLayout><ConnectToThirdParty /></GlobalLayout>} />
               <Route path='/provider/create' element={<GlobalLayout><CreateCredentials /></GlobalLayout>} />
               <Route path='/provider/my-credentials' element={<GlobalLayout><MyCredentials /></GlobalLayout>} />
